@@ -38,17 +38,17 @@
 
 [ Lotto ]
 - LottoMachine
-  - LottoPrice
-    - ₩1,000
   - Keyboard
     - 구입금액 입력
     - 지난 주 당첨 번호 입력
   - MachineProcess
-    - 구매 로또 개수 계산
-    - 로또 번호 중복 없이 발행
-    - 발행된 로또 번호 오름차순 정렬
-    - 발행된 로또 중 당첨 갯수 계산 ( 지난 주 당첨 번호 기준 )
-    - 당첨 개수 기반 총 수익률 계산
+    - LottoPrice
+      - 로또 구매 가능 개수 계산
+    - LottoRank
+      - 당첨 개수 계산
+      - LottoStatistics
+        - 총 당첨금액 계산
+        - 총 수익률 계산
   - LottoPrinter
     - 로또 구매 개수 출력
     - 구매한 로또 출력
