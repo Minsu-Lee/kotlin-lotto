@@ -1,8 +1,8 @@
 package lotto
 
+import lotto.model.process.MachineProcess
 import lotto.view.keyboard.Keyboard
 import lotto.view.monitor.Monitor
-import lotto.model.process.MachineProcess
 
 class LottoMachine(
     private val process: MachineProcess,
@@ -20,11 +20,12 @@ class LottoMachine(
 
         monitor.displayInputLastWeekLottoWinningNumbers()
         val lastWeekNumbers = keyboard.inputLastWeekWinningNumbers()
-        val lottoStatistics = process.calculateWinningStatistics(
-            lottoTickets,
-            lastWeekNumbers,
-            totalPurchaseAmount
-        )
+        val lottoStatistics =
+            process.calculateWinningStatistics(
+                lottoTickets,
+                lastWeekNumbers,
+                totalPurchaseAmount,
+            )
         monitor.displayLottoStatistics(lottoStatistics)
     }
 }

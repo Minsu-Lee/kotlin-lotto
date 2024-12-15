@@ -1,9 +1,8 @@
 package lotto.model.number
 
 class LottoNumbers(
-    private val lottoNumbers: List<Int>
-): List<Int> by lottoNumbers {
-
+    private val lottoNumbers: List<Int>,
+) : List<Int> by lottoNumbers {
     init {
         require(lottoNumbers.size == DEFAULT_LOTTO_COUNT) {
             "로또 번호는 ${DEFAULT_LOTTO_COUNT}개여야 합니다."
@@ -26,11 +25,10 @@ class LottoNumbers(
         const val DEFAULT_LOTTO_COUNT = 6
         private val NUMBERS = (LOTTO_MIN_NUMBER..LOTTO_MAX_NUMBER)
 
-        fun issuanceLottoNumbers(
-            lottoCount: Int = DEFAULT_LOTTO_COUNT
-        ): LottoNumbers {
-            val lottoNumbers = NUMBERS.shuffled().take(lottoCount)
-                .sorted()
+        fun issuanceLottoNumbers(lottoCount: Int = DEFAULT_LOTTO_COUNT): LottoNumbers {
+            val lottoNumbers =
+                NUMBERS.shuffled().take(lottoCount)
+                    .sorted()
             return LottoNumbers(lottoNumbers)
         }
 

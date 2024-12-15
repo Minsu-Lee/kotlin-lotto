@@ -5,8 +5,7 @@ import lotto.model.rank.LottoWinningRank
 class DefaultLottoStatistics(
     override val winningRank: Map<Int, Int>,
     private val totalPurchaseAmount: Int,
-): LottoStatistics {
-
+) : LottoStatistics {
     override val profitRate: Double
 
     init {

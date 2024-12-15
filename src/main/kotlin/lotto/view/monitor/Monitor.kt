@@ -1,7 +1,7 @@
 package lotto.view.monitor
 
-import lotto.model.statistics.LottoStatistics
 import lotto.model.number.LottoNumbers
+import lotto.model.statistics.LottoStatistics
 
 interface Monitor {
     fun displayLottoPurchaseAmount()

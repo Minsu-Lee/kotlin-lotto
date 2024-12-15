@@ -1,12 +1,12 @@
 package lotto.view.monitor
 
-import lotto.model.statistics.LottoStatistics
 import lotto.model.number.LottoNumbers
 import lotto.model.rank.LottoWinningRank
+import lotto.model.statistics.LottoStatistics
 import java.math.BigDecimal
 import java.math.RoundingMode
 
-class LottoMonitor: Monitor {
+class LottoMonitor : Monitor {
     override fun displayLottoPurchaseAmount() {
         println("구입금액을 입력해 주세요.")
     }
@@ -43,9 +43,10 @@ class LottoMonitor: Monitor {
     }
 
     private fun displayProfitRate(profitRate: Double) {
-        val rate = BigDecimal(profitRate)
-            .setScale(2, RoundingMode.DOWN)
-            .toDouble()
+        val rate =
+            BigDecimal(profitRate)
+                .setScale(2, RoundingMode.DOWN)
+                .toDouble()
 
         if (profitRate > 1.0) {
             println("총 수익률은 ${rate}입니다.")

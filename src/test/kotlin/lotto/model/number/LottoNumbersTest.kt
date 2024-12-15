@@ -17,10 +17,11 @@ class LottoNumbersTest {
     fun `로또 번호는 1 ~ 45 사이여야 한다`() {
         repeat(100) {
             val lottoNumbers = LottoNumbers.issuanceLottoNumbers()
-            val lottoNumberRange = LottoNumbers.LOTTO_MIN_NUMBER .. LottoNumbers.LOTTO_MAX_NUMBER
-            val result = lottoNumbers.all {
-                it in lottoNumberRange
-            }
+            val lottoNumberRange = LottoNumbers.LOTTO_MIN_NUMBER..LottoNumbers.LOTTO_MAX_NUMBER
+            val result =
+                lottoNumbers.all {
+                    it in lottoNumberRange
+                }
             result shouldBe true
         }
     }
@@ -37,12 +38,13 @@ class LottoNumbersTest {
         strings = [
             "1,2,3",
             "1",
-            "1,2,3,4,5,6,7"
-        ]
+            "1,2,3,4,5,6,7",
+        ],
     )
     fun `로또 번호는 6개여야 한다2`(rawNumbers: String) {
-        val numbers = rawNumbers.split(",")
-            .map { it.toInt() }
+        val numbers =
+            rawNumbers.split(",")
+                .map { it.toInt() }
         shouldThrow<IllegalArgumentException> {
             LottoNumbers(numbers)
         }.apply {
@@ -54,12 +56,13 @@ class LottoNumbersTest {
     @ValueSource(
         strings = [
             "1,2,3,4,5,46",
-            "0,1,2,3,4,5"
-        ]
+            "0,1,2,3,4,5",
+        ],
     )
     fun `로또 번호는 1 ~ 45 사이여야 한다`(rawNumbers: String) {
-        val numbers = rawNumbers.split(",")
-            .map { it.toInt() }
+        val numbers =
+            rawNumbers.split(",")
+                .map { it.toInt() }
         shouldThrow<IllegalArgumentException> {
             LottoNumbers(numbers)
         }.apply {
@@ -74,11 +77,12 @@ class LottoNumbersTest {
             "1,2,3,3,3,3",
             "1,1,1,1,1,1",
             "1,2,3,4,5,5",
-        ]
+        ],
     )
     fun `로또 번호는 중복될 수 없다`(rawNumbers: String) {
-        val numbers = rawNumbers.split(",")
-            .map { it.toInt() }
+        val numbers =
+            rawNumbers.split(",")
+                .map { it.toInt() }
         shouldThrow<IllegalArgumentException> {
             LottoNumbers(numbers)
         }.apply {

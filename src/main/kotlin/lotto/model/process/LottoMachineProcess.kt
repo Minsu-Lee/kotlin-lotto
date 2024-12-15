@@ -1,15 +1,15 @@
 package lotto.model.process
 
-import lotto.model.statistics.DefaultLottoStatistics
-import lotto.model.statistics.LottoStatistics
 import lotto.model.number.LottoNumbers
 import lotto.model.price.LottoPrice
 import lotto.model.rank.LottoRank
+import lotto.model.statistics.DefaultLottoStatistics
+import lotto.model.statistics.LottoStatistics
 
 class LottoMachineProcess(
     private val lottoPrice: LottoPrice,
     private val lottoRank: LottoRank,
-): MachineProcess {
+) : MachineProcess {
     override fun calculateLottoCount(purchaseAmount: Int): Int {
         return lottoPrice.calculateLottoCount(purchaseAmount)
     }
@@ -23,10 +23,11 @@ class LottoMachineProcess(
         winningNumbers: List<Int>,
         totalPurchaseAmount: Int,
     ): LottoStatistics {
-        val winningRank = lottoRank.calculateWinningCounts(
-            lottoTickets,
-            winningNumbers
-        )
+        val winningRank =
+            lottoRank.calculateWinningCounts(
+                lottoTickets,
+                winningNumbers,
+            )
         return DefaultLottoStatistics(winningRank, totalPurchaseAmount)
     }
 }

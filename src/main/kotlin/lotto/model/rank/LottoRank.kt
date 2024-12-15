@@ -5,6 +5,6 @@ import lotto.model.number.LottoNumbers
 interface LottoRank {
     fun calculateWinningCounts(
         lottoTickets: List<LottoNumbers>,
-        winningNumbers: List<Int>
+        winningNumbers: List<Int>,
     ): Map<Int, Int>
 }
