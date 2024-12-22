@@ -38,6 +38,8 @@
 
 [ Lotto ]
 - LottoMachine
+  - LottoNumbers
+    - 6개 로또 번호 생성 
   - Keyboard
     - 구입금액 입력
     - 지난 주 당첨 번호 입력
@@ -49,7 +51,7 @@
       - LottoStatistics
         - 총 당첨금액 계산
         - 총 수익률 계산
-  - LottoPrinter
+  - LottoMonitor
     - 로또 구매 개수 출력
     - 구매한 로또 출력
     - 당첨 통계 출력
